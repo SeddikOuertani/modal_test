@@ -1,0 +1,59 @@
+<div>
+    <form method="POST" [formGroup]="form">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Car information</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+        
+            <div class="mb-3">
+                <div class="input-group">
+                    <input id="brand" class="form-control" formControlName="brand" placeholder="brand">
+                </div>
+                <div class="input-group">
+                    <input id="model" class="form-control" formControlName="model" placeholder="model">
+                </div>
+                <div class="input-group">
+                    <input id="Mileage" class="form-control" formControlName="mileage" placeholder="Mileage">
+                </div>
+                <div class="input-group">
+                    <input id="Price" class="form-control" formControlName="price" placeholder="Price">
+                </div>
+                <div class="input-group">
+                    <input id="rentPrice" class="form-control" formControlName="rentPrice" placeholder="Renting Price">
+                    <select #selectUnit (click)="updateUnit(selectUnit.value)" [value]="selectedUnit" class="unit">
+                        <option disabled selected> Choose Unit </option>
+                        <option  *ngFor="let unit of unitList" class="option" [value]="unit">
+                            {{unit | uppercase}}
+                        </option>
+                       
+                    </select>
+                </div>
+                <div class="input-group rsig">
+                    <div (click)="toggleForSaleState()" [ngClass]="saleStyleClasses"  class="rs-btn">
+                        <span class="rs-text">For Sale</span>
+                        <fa-icon [hidden]="saleIconHidden" class="rs-icon" [icon]="checkedIcon" ></fa-icon>
+                    </div>
+                    <div (click)="toggleForRentState()" [ngClass]="rentStyleClasses" class="rs-btn">
+                        <span  class="rs-text" >For rent</span>
+                        <fa-icon [hidden]="rentIconHidden" class="rs-icon" [icon]="checkedIcon"></fa-icon>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div (click)="toggleAvailabilityState()" [ngClass]="avStyleClasses" class="available-btn">
+                        <span class="available-text">Currently {{available?"available":"unavailable"}} </span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div (click)="toggleVisibilityState()" [ngClass]="visibleStyleClasses"  class="visible-btn">
+                        <fa-icon class="visible-icon" [icon]="visible?visibleIcon:nonVisibleIcon"></fa-icon>
+                        <span class="visible-text">{{visible?"Visible":"Invisible"}} to clients</span>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-dark" (click)=" onSubmit(); modal.close('Save click')">Save</button>
+        </div>
+    </form>
+</div>

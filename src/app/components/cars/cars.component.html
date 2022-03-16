@@ -1,0 +1,88 @@
+<div class="cars-wrapper">
+    
+    <div class="header-wrapper">
+        <div class="header-text-wrapper">
+            <h3 class="header">My Cars</h3>
+        </div>
+        <div class="header-search-wrapper">
+            <div class="search-wrapper form-control">
+                <input type="text" [(ngModel)]="searchFilter" class="search-input-field">
+                <fa-icon class="search-icon" [icon]="searchIcon"></fa-icon>
+            </div>
+        </div>
+    </div>
+    
+    <div class="add-btn" (click)="open(content)">
+        <span class="add-btn-text">Add Car</span>
+        <fa-icon [icon]="addIcon"></fa-icon>
+    </div>
+
+    <hr>
+
+    <div class="car-list">
+        <div class="filter-bar">
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Brand</div>
+                <div class="filter-icon-part">
+                    <fa-icon [icon]="filterIcon" ></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Model</div>
+                <div class="filter-icon-part">
+                    <fa-icon [icon]="filterIcon"></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Mileage</div>
+                <div class="filter-icon-part">
+                    <fa-icon [icon]="filterIcon"></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Price</div>
+                <div class="filter-icon-part">
+                    <fa-icon [icon]="filterIcon"></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Available</div>
+                <div class="filter-icon-part">
+                    <fa-icon [icon]="filterIcon"></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Visible</div>
+                <div class="filter-icon-part">
+                    <fa-icon [icon]="filterIcon"></fa-icon>
+                </div>
+            </div>
+        </div>
+
+        <div *ngFor="let car of cars | searchFilter : searchFilter" class="car-list-item-wrapper row">
+            
+            <div [routerLink]="car.getId()" class="car-list-item col">
+                <div class="car-list-item-section"> {{car.getBrand() | uppercase}}  </div>
+                <div class="car-list-item-section"> {{car.getModel() | titlecase}} </div>
+                <div class="car-list-item-section"> {{car.getMileage() | number}} Kms </div>
+                <div class="car-list-item-section"> {{car.getPrice() | currency}} </div>
+                <div class="car-list-item-section"> {{car.isAvailable()}} </div>
+                <div class="car-list-item-section"> {{car.isVisible()}} </div>
+            </div>
+            <div class="mod-item row col-md-2"> 
+                <div (click)="open(content,car)" class="edit-icon col">
+                    <fa-icon [icon]="editIcon" ></fa-icon>
+                </div>
+                <div (click)="deleteCar(car.getId())" class="del-icon col">
+                    <fa-icon [icon]="deleteIcon" ></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ********************* Modal Definition ********************** -->
+            
+<ng-template #content let-modal>
+    <app-add-car-modal (closedBySave)="onModalSave($event)" [car]="carSelected" [modal]="modal"></app-add-car-modal>
+</ng-template>

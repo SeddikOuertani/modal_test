@@ -1,0 +1,159 @@
+.cars-wrapper{
+    height: 100vh;
+    width: 80%;
+    margin : auto;
+}
+
+.header-wrapper{
+    margin-top: 20vh;
+    padding: 2vh 2vh 2vh 0;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    column-gap: 2vw;
+}
+
+.header-text-wrapper{
+    flex-wrap: wrap;
+}
+
+.header-search-wrapper{
+    flex : auto
+}
+
+.search-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.search-input-field{
+    border : none;
+    outline : none;
+    height: 100%;
+    width: 100%;
+}
+
+.search-icon{
+    cursor : text;
+}
+
+.add-btn{
+    border-radius: 5px;
+    width: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
+    background-color: rgb(57, 142, 223);
+    color : black;
+    padding : 10px;
+    float :right;
+    position : absolute;
+    top : 23vh;
+    right : 3vw;
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    background-color: rgb(52, 129, 202);
+    color : white;
+}
+
+.add-btn-text{
+    border-right: 1px rgba(0, 0, 0, 0.315) solid ;
+    padding: 0px 4px;
+    margin-right: 4px;   
+}
+
+.filter-bar{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    width: 85%;
+    font-size: smaller;
+    border-bottom : 1.5px black solid
+}
+
+.filter-bar-item {
+    flex : 1;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    column-gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    padding : 2vh;
+    border-radius: 5px;
+}
+
+.filter-text-part{
+    color : rgb(57, 142, 223)
+}
+
+.filter-icon-part{
+    color : black
+}
+
+.car-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+    margin: auto;
+}
+
+.car-list-item-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.car-list-item{
+    border : 1px rgb(201, 201, 201) solid;
+    display : flex;
+    flex-direction: row;
+    border-radius: 5px;
+    column-gap: 1vw;
+    cursor: pointer;
+    padding: 2vh;
+}
+
+.car-list-item:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.car-list-item-section{
+    flex : 1;
+    text-align: center;
+}
+
+.mod-item{
+    justify-items: center ;
+    align-items: center;
+    border-radius: 5px;
+    border : 1px rgb(201, 201, 201) solid;
+    margin-left: 1vw;
+}
+
+.mod-item:hover{
+    background-color : rgb(235, 235, 235);
+}
+
+.edit-icon{
+    color: rgb(57, 142, 223);
+    text-align: center;
+    border-right: 1px rgb(201, 201, 201) solid;
+}
+
+.del-icon{
+    color : rgb(206, 70, 46);
+    text-align: center;
+}
+
+.edit-icon:hover{
+    color : rgb(45, 112, 175);
+}
+
+.del-icon:hover{
+    color : rgb(148, 51, 34);
+}
+
+fa-icon{
+    cursor: pointer;
+}
