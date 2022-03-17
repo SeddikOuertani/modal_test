@@ -1,0 +1,38 @@
+<div>
+    <form method="POST" [formGroup]="form">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Offer information</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+        
+            <div class="mb-3">
+                <div class="input-group">
+                    <input id="title" class="form-control" formControlName="title" placeholder="Title">
+                </div>
+                <div class="input-group">
+                    <input id="type" class="form-control" formControlName="type" placeholder="Type">
+                </div>
+                <div class="input-group">
+                    <input id="description" class="form-control" formControlName="description" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start date</label>
+                    <div class="input-group">
+                        <input name="startDate" value="" type="date" id="startDate" class="form-control" formControlName="startDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End date</label>
+                    <div class="input-group">
+                        <input name="endDate" value="" type="date" id="startDate" class="form-control" formControlName="startDate">
+                    </div>
+                </div>
+               
+            </div>
+        </div> 
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-dark" (click)=" onSubmit(); modal.close('Save click')">Save</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,80 @@
+<div class="offers-wrapper">
+    
+    <div class="header-wrapper">
+        <div class="header-text-wrapper">
+            <h3 class="header">My Offers</h3>
+        </div>
+        <div class="header-search-wrapper">
+            <div class="search-wrapper form-control">
+                <input type="text" class="search-input-field">
+                <fa-icon class="search-icon" [icon]="searchIcon" ></fa-icon>
+            </div>
+        </div>
+    </div>
+    
+    <div (click)="open(content)"class="add-btn">
+        <span class="add-btn-text">Add offer</span>
+        <fa-icon class="fs-sm" [icon]="addOfferIcon"></fa-icon>
+    </div>
+
+    <hr>
+
+    <div class="offer-list">
+        <div class="filter-bar">
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Title</div>
+                <div class="filter-icon-part">
+                    <fa-icon class="fa-xs" [icon]="filterIcon" ></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">type</div> <!-- custom || negotiable -->
+                <div class="filter-icon-part">
+                    <fa-icon class="fa-xs" [icon]="filterIcon" ></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Description</div>
+                <div class="filter-icon-part">
+                    <fa-icon class="fa-xs" [icon]="filterIcon" ></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Period</div> <!-- from when to when -->
+                <div class="filter-icon-part">
+                    <fa-icon class="fa-xs" [icon]="filterIcon" ></fa-icon>
+                </div>
+            </div>
+            <div class="filter-bar-item">
+                <div class="filter-text-part">Activated</div>
+                <div class="filter-icon-part">
+                    <fa-icon class="fa-xs" [icon]="filterIcon" ></fa-icon>
+                </div>
+            </div>
+        </div>
+
+        <div *ngFor="let offer of offersList" class="offer-list-item-wrapper row">
+            
+            <div class="offer-list-item col">
+                <div class="offer-list-item-section">  </div>
+                <div class="offer-list-item-section"> </div>
+                <div class="offer-list-item-section"> </div>
+                <div class="offer-list-item-section"> </div>
+                <div class="offer-list-item-section"> </div>
+                <div class="offer-list-item-section"> </div>
+            </div>
+            <div class="mod-item col-md-1"> 
+                <div class="del-icon">
+                    <fa-icon [icon]="deleteIcon" ></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ********************* Modal Definition ********************** -->
+            
+<ng-template #content let-modal>
+    <app-add-offer-modal (closedBySave)="onModalSave($event)" [modal]="modal"></app-add-offer-modal>
+</ng-template>

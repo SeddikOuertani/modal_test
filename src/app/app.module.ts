@@ -13,9 +13,12 @@ import { CarsInfoComponent } from './components/cars-info/cars-info.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddCarModalComponent } from './components/modals/add-car-modal/add-car-modal.component';
+import { OffersComponent } from './components/offers/offers.component';
+
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+
 import { MockCarService } from './services/mock-car.service';
-import { OffersComponent } from './offers/offers.component';
+import { AddOfferModalComponent } from './components/modals/add-offer-modal/add-offer-modal.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { OffersComponent } from './offers/offers.component';
     AddCarModalComponent,
     SearchFilterPipe,
     OffersComponent,
+    AddOfferModalComponent,
+    
   ],
   imports: [
     BrowserModule,

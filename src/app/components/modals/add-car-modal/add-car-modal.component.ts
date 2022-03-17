@@ -3,8 +3,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, FormBuilder, FormControlName } from '@angular/forms';
 import { Car } from 'src/app/models/car';
 import { MockCarService } from 'src/app/services/mock-car.service';
-import { Router } from '@angular/router';
-import { faCheck, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-car-modal',
@@ -22,8 +21,8 @@ export class AddCarModalComponent implements OnInit{
 
   //Icons
   checkedIcon = faCheck;
-  visibleIcon = faLockOpen;
-  nonVisibleIcon = faLock
+  visibleIcon = faEye;
+  nonVisibleIcon = faEyeSlash;
 
   //domManipulation
   saleIconHidden !: boolean;
@@ -66,7 +65,6 @@ export class AddCarModalComponent implements OnInit{
   constructor(
       private modalService: NgbModal,
       private mockCarService : MockCarService) {
-
       }
 
   ngOnInit(): void {
